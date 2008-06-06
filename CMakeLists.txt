@@ -21,7 +21,7 @@ ENDIF(WIN32)
 SET(BREEDOU_SRCS
 	src/main.cpp
 	src/main_window.cpp
-	src/playground.cpp
+	src/battleground.cpp
 	src/robot.cpp
 	src/keyboard.cpp
 	src/item.cpp
@@ -43,7 +43,7 @@ INCLUDE_DIRECTORIES(${CMAKE_CURRENT_BINARY_DIR})
 
 SET(BREEDOU_MOCH
 	src/main_window.h
-	src/playground.h
+	src/battleground.h
 	src/keyboard.h
 )
 
