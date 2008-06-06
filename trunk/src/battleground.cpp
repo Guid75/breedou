@@ -10,19 +10,19 @@
 #include "box.h"
 #include "texture_manager.h"
 
-#include "playground.h"
+#include "battleground.h"
 
-Playground *Playground::_instance = 0;
+Battleground *Battleground::_instance = 0;
 
-Playground *Playground::instance()
+Battleground *Battleground::instance()
 {
     if (!_instance)
-        _instance = new Playground;
+        _instance = new Battleground;
 
     return _instance;
 }
 
-Playground::Playground(QWidget *parent) : QGLWidget(parent)
+Battleground::Battleground(QWidget *parent) : QGLWidget(parent)
 {
     _mousePos = QPoint();
     _oldFrameTime = QTime::currentTime();
@@ -35,12 +35,12 @@ Playground::Playground(QWidget *parent) : QGLWidget(parent)
     _timerAnimation.start();
 }
 
-Playground::~Playground()
+Battleground::~Battleground()
 {
     qDeleteAll(_items);
 }
 
-void Playground::initializeGL()
+void Battleground::initializeGL()
 {
     // Set up the rendering context, define display lists etc.:
 //    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
@@ -70,7 +70,7 @@ void Playground::initializeGL()
     }
 }
 
-void Playground::resizeGL(int w, int h)
+void Battleground::resizeGL(int w, int h)
 {
     // setup viewport, projection etc.:
     int side = qMin(w, h);
@@ -83,7 +83,7 @@ void Playground::resizeGL(int w, int h)
     glMatrixMode(GL_MODELVIEW);
 }
 
-void Playground::paintGL()
+void Battleground::paintGL()
 {
     qglClearColor(QColor(20, 20, 20));
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
@@ -104,7 +104,7 @@ void Playground::paintGL()
     }
 }
 
-void Playground::timerAnimationTimeout()
+void Battleground::timerAnimationTimeout()
 {
     // Angle between the robot and the mouse cursor
     QPoint newP = QCursor::pos();
@@ -235,7 +235,7 @@ void Playground::timerAnimationTimeout()
     updateGL();
 }
 
-bool Playground::eventFilter(QObject *obj, QEvent *event)
+bool Battleground::eventFilter(QObject *obj, QEvent *event)
 {
     if (event->type() == QEvent::KeyPress)
     {
@@ -245,7 +245,7 @@ bool Playground::eventFilter(QObject *obj, QEvent *event)
     return QGLWidget::eventFilter(obj, event);
 }
 
-QPoint Playground::scenePointToPixelPoint(const QPointF &scenePoint) const
+QPoint Battleground::scenePointToPixelPoint(const QPointF &scenePoint) const
 {
     QPoint result;
 
@@ -254,7 +254,7 @@ QPoint Playground::scenePointToPixelPoint(const QPointF &scenePoint) const
     return result;
 }
 
-QPointF Playground::pixelPointToScenePoint(const QPoint &pixelPoint) const
+QPointF Battleground::pixelPointToScenePoint(const QPoint &pixelPoint) const
 {
     QPointF result;
 

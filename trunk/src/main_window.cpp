@@ -1,5 +1,7 @@
 #include <QHBoxLayout>
 
+#include "battleground.h"
+
 #include "main_window.h"
 
 MainWindow::MainWindow() : QMainWindow()
@@ -9,9 +11,9 @@ MainWindow::MainWindow() : QMainWindow()
     resize(800, 600);
 
     // Playground
-    QHBoxLayout *mainLayout = new QHBoxLayout(widgetPlayground);
+    QHBoxLayout *mainLayout = new QHBoxLayout(widgetBattleground);
 
-    mainLayout->addWidget(Playground::instance());
+    mainLayout->addWidget(Battleground::instance());
 
     QList<int> sizes;
     sizes << 400 << 100;

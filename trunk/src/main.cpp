@@ -1,4 +1,5 @@
 #include <QApplication>
+#include <QTime>
 
 #include "keyboard.h"
 #include "main_window.h"
