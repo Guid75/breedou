@@ -16,9 +16,9 @@
    <property name="geometry" >
     <rect>
      <x>0</x>
-     <y>27</y>
+     <y>25</y>
      <width>800</width>
-     <height>612</height>
+     <height>614</height>
     </rect>
    </property>
    <layout class="QGridLayout" name="gridLayout" >
@@ -27,8 +27,8 @@
       <property name="orientation" >
        <enum>Qt::Horizontal</enum>
       </property>
-      <widget class="QWidget" native="1" name="widgetPlayground" />
-      <widget class="QWidget" name="" >
+      <widget class="QWidget" native="1" name="widgetBattleground" />
+      <widget class="QWidget" name="layoutWidget" >
        <layout class="QVBoxLayout" name="verticalLayout" >
         <item>
          <widget class="QToolBox" name="toolBox" >
@@ -40,8 +40,8 @@
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>286</width>
-             <height>496</height>
+             <width>565</width>
+             <height>504</height>
             </rect>
            </property>
            <attribute name="label" >
@@ -58,8 +58,8 @@
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>286</width>
-             <height>496</height>
+             <width>94</width>
+             <height>24</height>
             </rect>
            </property>
            <attribute name="label" >
@@ -97,7 +97,7 @@
      <x>0</x>
      <y>0</y>
      <width>800</width>
-     <height>27</height>
+     <height>25</height>
     </rect>
    </property>
   </widget>

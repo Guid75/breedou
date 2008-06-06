@@ -5,12 +5,12 @@
 
 #include "robot.h"
 
-class Playground : public QGLWidget
+class Battleground : public QGLWidget
 {
     Q_OBJECT
 
 public:
-    static Playground *instance();
+    static Battleground *instance();
 
     const QList<Item*> &items() { return _items; }
 
@@ -24,7 +24,7 @@ protected:
     bool eventFilter(QObject *obj, QEvent *event);
 
 private:
-    static Playground *_instance;
+    static Battleground *_instance;
     QPoint _mousePos;
     QTimer _timerAnimation;
     QRect _viewport;
@@ -33,8 +33,8 @@ private:
     QTime _oldFrameTime;
     int _fireDelay; // Time since the last shoot in ms
 
-    Playground(QWidget *parent = 0);
-    ~Playground();
+    Battleground(QWidget *parent = 0);
+    ~Battleground();
 
     QPoint scenePointToPixelPoint(const QPointF &scenePoint) const;
     QPointF pixelPointToScenePoint(const QPoint &pixelPoint) const;
